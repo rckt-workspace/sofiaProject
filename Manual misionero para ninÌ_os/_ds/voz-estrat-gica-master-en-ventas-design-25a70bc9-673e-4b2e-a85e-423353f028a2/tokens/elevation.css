@@ -1,0 +1,30 @@
+/* ============================================================
+   ELEVATION — shadows, borders, the green glow & waveform
+   Voz Estratégica uses soft neutral shadows on light surfaces,
+   and a signature GREEN GLOW for accent/audio motifs on dark.
+   ============================================================ */
+:root {
+  /* ---- Neutral shadows (light surfaces) ---- */
+  --shadow-xs: 0 1px 2px rgba(14, 15, 12, 0.06);
+  --shadow-sm: 0 2px 6px rgba(14, 15, 12, 0.08);
+  --shadow-md: 0 8px 24px rgba(14, 15, 12, 0.10);
+  --shadow-lg: 0 18px 48px rgba(14, 15, 12, 0.14);
+  --shadow-xl: 0 30px 80px rgba(14, 15, 12, 0.18);
+
+  /* ---- Green accent glow (the audio-wave signature) ---- */
+  --glow-green-sm: 0 0 0 4px rgba(64, 237, 81, 0.18);
+  --glow-green-md: 0 6px 24px rgba(64, 237, 81, 0.35);
+  --glow-green-lg: 0 10px 50px rgba(64, 237, 81, 0.45);
+
+  /* ---- Hairlines ---- */
+  --hairline: 1px solid var(--border);
+  --hairline-strong: 2px solid var(--vz-black);
+  --hairline-dark: 1px solid var(--border-dark);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);   /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms;  /* @kind other */
+  --dur-base: 200ms;  /* @kind other */
+  --dur-slow: 360ms;  /* @kind other */
+}

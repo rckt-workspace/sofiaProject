@@ -1,0 +1,82 @@
+/* ============================================================
+   COLORS — Voz Estratégica
+   Three brand constants (Negro / Verde / Blanco) expanded into
+   working scales + semantic aliases. High-contrast by design.
+   ============================================================ */
+:root {
+  /* ---- Brand constants (from identity proposal) ---- */
+  --vz-black: #0e0f0c;   /* "Negro"  */
+  --vz-green: #40ed51;   /* "Verde"  */
+  --vz-white: #ffffff;   /* "Blanco" */
+
+  /* ---- Green scale (accent) ---- */
+  --vz-green-100: #e7fdec;
+  --vz-green-200: #b6f8c2;
+  --vz-green-300: #84f196;
+  --vz-green-400: #40ed51; /* = brand verde */
+  --vz-green-500: #28d93f;
+  --vz-green-600: #1cbe33; /* hover on light */
+  --vz-green-700: #169a2a; /* press / text-on-light accent */
+  --vz-green-800: #11761f;
+
+  /* ---- Ink / dark surfaces (warm-neutral blacks) ---- */
+  --vz-ink-900: #0e0f0c;  /* = brand negro, page-dark */
+  --vz-ink-850: #131512;  /* dark page alt */
+  --vz-ink-800: #191b18;  /* dark card */
+  --vz-ink-700: #23261f;  /* dark card raised / border-dark */
+  --vz-ink-600: #34382f;  /* dark hairline on darker */
+
+  /* ---- Neutral grays (light surfaces) ---- */
+  --vz-gray-50:  #f7f8f6;
+  --vz-gray-100: #f1f2ef;
+  --vz-gray-200: #e6e8e3;
+  --vz-gray-300: #d4d7cf;
+  --vz-gray-400: #b0b4aa;
+  --vz-gray-500: #8b9085;
+  --vz-gray-600: #686d62;
+  --vz-gray-700: #474b42;
+
+  /* ---- Functional ---- */
+  --vz-danger: #ff4d4d;
+  --vz-warning: #ffb020;
+
+  /* ============================================================
+     SEMANTIC ALIASES — use these in components
+     ============================================================ */
+  /* Surfaces */
+  --surface-base:       var(--vz-white);
+  --surface-subtle:     var(--vz-gray-50);
+  --surface-card:       var(--vz-white);
+  --surface-muted:      var(--vz-gray-100);
+  --surface-dark:       var(--vz-ink-900);
+  --surface-dark-alt:   var(--vz-ink-850);
+  --surface-dark-card:  var(--vz-ink-800);
+  --surface-dark-raised:var(--vz-ink-700);
+  --surface-accent:     var(--vz-green-400);
+
+  /* Text */
+  --text-strong:    var(--vz-black);
+  --text-body:      #2a2d27;
+  --text-muted:     var(--vz-gray-600);
+  --text-faint:     var(--vz-gray-500);
+  --text-on-dark:   var(--vz-white);
+  --text-on-dark-muted: #b9bdb2;
+  --text-on-accent: var(--vz-black);
+  --text-accent:    var(--vz-green-700); /* green text legible on white */
+
+  /* Accent */
+  --accent:          var(--vz-green-400);
+  --accent-hover:    var(--vz-green-500);
+  --accent-press:    var(--vz-green-600);
+  --accent-contrast: var(--vz-black);
+  --accent-soft:     var(--vz-green-100);
+
+  /* Borders / lines */
+  --border:        var(--vz-gray-200);
+  --border-strong: var(--vz-black);
+  --border-dark:   var(--vz-ink-700);
+  --border-accent: var(--vz-green-400);
+
+  /* Focus */
+  --focus-ring: var(--vz-green-400);
+}

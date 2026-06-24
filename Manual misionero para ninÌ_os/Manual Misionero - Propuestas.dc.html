@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;}
+    ::selection{background:#DCE7FF;}
+    image-slot{display:block !important;width:100% !important;height:100% !important;}
+    @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+  </style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:48px;background:#e9e7e1;">
+
+  <!-- ===== Intro / instrucciones ===== -->
+  <div style="max-width:980px;margin:0 0 40px 4px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;height:30px;padding:0 14px;border-radius:999px;background:#111;color:#fff;font:700 11px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;">I AM HELP · Propuestas de diseño</div>
+    <h1 style="margin:18px 0 0;font:700 38px/1.08 'Inter',sans-serif;letter-spacing:-.03em;color:#111;">Manual misionero para el trato con niños</h1>
+    <p style="margin:14px 0 0;font:400 18px/1.6 'Inter',sans-serif;color:#4A4A4A;max-width:70ch;">Tres direcciones de <strong style="color:#111;font-weight:600;">portada</strong> + una <strong style="color:#111;font-weight:600;">sección de muestra</strong> en uso (Niños con discapacidad), con la marca I AM HELP. Elige la dirección que más te guste y desarrollo la guía completa de 16 secciones. Las fotos son espacios editables: arrastra imágenes de I AM HELP. Las tarjetas de la sección se abren al hacer clic.</p>
+  </div>
+
+  <!-- ===== Fila de frames ===== -->
+  <div style="display:flex;gap:48px;align-items:flex-start;">
+
+    <!-- ========== PORTADA A ========== -->
+    <div style="flex:0 0 auto;width:1040px;">
+      <div style="font:600 13px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;margin:0 0 12px 4px;">Portada · Opción A — Editorial claro</div>
+      <div style="width:1040px;height:720px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 12px 44px rgba(17,17,17,.12);overflow:hidden;display:flex;flex-direction:column;padding:52px 56px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:11px;">
+            <div style="width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(31,94,255,.30);">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
+            </div>
+            <div style="font:700 19px/1 'Inter',sans-serif;letter-spacing:-.02em;color:#111;">I AM <span style="color:#1F5EFF;">HELP</span></div>
+          </div>
+          <div style="display:inline-flex;align-items:center;height:34px;padding:0 16px;border-radius:999px;background:#F7F8FA;border:1px solid #E5E7EB;font:600 12px/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#4A4A4A;">Formación misionera</div>
+        </div>
+        <div style="flex:1;display:flex;align-items:center;gap:48px;">
+          <div style="flex:1.05;">
+            <div style="font:700 13px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1F5EFF;margin-bottom:18px;">Manual misionero</div>
+            <h1 style="margin:0;font:700 62px/1.01 'Inter',sans-serif;letter-spacing:-.035em;color:#111;">El trato con <span style="color:#1F5EFF;">niños</span></h1>
+            <p style="margin:22px 0 0;font:400 19px/1.55 'Inter',sans-serif;color:#4A4A4A;max-width:31ch;">La guía completa para enseñar, incluir y cuidar a cada niño — de los más pequeños a los jóvenes.</p>
+            <div style="display:flex;align-items:center;gap:18px;margin-top:34px;">
+              <a style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);color:#fff;font:600 16px/1 'Inter',sans-serif;text-decoration:none;box-shadow:0 10px 24px rgba(31,94,255,.32);transition:filter .2s,transform .2s;" style-hover="filter:brightness(1.07);transform:translateY(-1px);">Abrir el manual <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              <span style="font:500 14px/1 'Inter',sans-serif;color:#9aa1ad;">16 secciones · referencia</span>
+            </div>
+          </div>
+          <div style="flex:.95;height:482px;">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="coverA-kids" shape="rounded" radius="24" fit="cover" placeholder="Arrastra una foto de I AM HELP" style="width:100%;height:100%;display:block;" hint-size="100%,100%"></x-import>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== PORTADA B ========== -->
+    <div style="flex:0 0 auto;width:1040px;">
+      <div style="font:600 13px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;margin:0 0 12px 4px;">Portada · Opción B — Azul inmersivo</div>
+      <div style="position:relative;width:1040px;height:720px;border-radius:14px;overflow:hidden;box-shadow:0 12px 44px rgba(17,17,17,.18);background:linear-gradient(135deg,#1F5EFF 0%,#3D73FF 100%);padding:52px 56px;display:flex;flex-direction:column;">
+        <div style="position:absolute;right:-130px;top:-130px;width:440px;height:440px;border-radius:999px;background:rgba(255,255,255,.08);"></div>
+        <div style="position:absolute;right:60px;bottom:-170px;width:360px;height:360px;border-radius:999px;border:1.5px solid rgba(255,255,255,.20);"></div>
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:11px;">
+            <div style="width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.30);display:flex;align-items:center;justify-content:center;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
+            </div>
+            <div style="font:700 19px/1 'Inter',sans-serif;letter-spacing:-.02em;color:#fff;">I AM <span style="color:#DCE7FF;">HELP</span></div>
+          </div>
+          <div style="display:inline-flex;align-items:center;height:34px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);font:600 12px/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff;">Guía completa</div>
+        </div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;max-width:780px;">
+          <div style="font:700 13px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#BFD3FF;margin-bottom:18px;">Manual misionero</div>
+          <h1 style="margin:0;font:700 66px/1.0 'Inter',sans-serif;letter-spacing:-.035em;color:#fff;">Para el trato con niños</h1>
+          <p style="margin:22px 0 0;font:400 20px/1.55 'Inter',sans-serif;color:#DCE7FF;max-width:36ch;">Forma, incluye y acompaña a cada niño con el corazón de la misión.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;max-width:720px;">
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Niños con discapacidad</span>
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Captar la atención</span>
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Disciplina con amor</span>
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Contar historias</span>
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Globoflexia</span>
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Pintacaritas</span>
+            <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);font:600 13px/1 'Inter',sans-serif;color:#fff;">Oración con niños</span>
+          </div>
+          <div style="margin-top:34px;">
+            <a style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 30px;border-radius:999px;background:#fff;color:#1F5EFF;font:700 16px/1 'Inter',sans-serif;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.20);transition:transform .2s,box-shadow .2s;" style-hover="transform:translateY(-1px);box-shadow:0 16px 32px rgba(0,0,0,.26);">Comenzar la guía <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== PORTADA C ========== -->
+    <div style="flex:0 0 auto;width:1040px;">
+      <div style="font:600 13px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;margin:0 0 12px 4px;">Portada · Opción C — Foto protagonista</div>
+      <div style="width:1040px;height:720px;border-radius:14px;overflow:hidden;box-shadow:0 12px 44px rgba(17,17,17,.16);display:flex;background:#fff;border:1px solid #E5E7EB;">
+        <div style="position:relative;width:54%;height:100%;background:#0b1220;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="coverC-kids" shape="rect" fit="cover" placeholder="Arrastra una foto de I AM HELP (niños / misión)" style="width:100%;height:100%;display:block;" hint-size="100%,100%"></x-import>
+          <div style="position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to top,rgba(8,12,22,.82),rgba(8,12,22,0));pointer-events:none;"></div>
+          <div style="position:absolute;left:30px;top:30px;display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);font:600 12px/1 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;">I AM HELP · Misiones</div>
+          <div style="position:absolute;left:30px;right:30px;bottom:28px;color:#fff;font:600 17px/1.4 'Inter',sans-serif;text-shadow:0 1px 10px rgba(0,0,0,.55);">“Dejen que los niños vengan a mí.”</div>
+        </div>
+        <div style="width:46%;height:100%;padding:54px 48px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);display:flex;align-items:center;justify-content:center;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
+            </div>
+            <div style="font:700 17px/1 'Inter',sans-serif;letter-spacing:-.02em;color:#111;">I AM <span style="color:#1F5EFF;">HELP</span></div>
+          </div>
+          <div style="font:700 13px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1F5EFF;margin:30px 0 16px;">Manual misionero</div>
+          <h1 style="margin:0;font:700 50px/1.04 'Inter',sans-serif;letter-spacing:-.03em;color:#111;">El trato con <span style="color:#1F5EFF;">niños</span></h1>
+          <p style="margin:18px 0 0;font:400 17px/1.55 'Inter',sans-serif;color:#4A4A4A;">Forma, incluye y acompaña a cada niño con el corazón de la misión.</p>
+          <div style="display:flex;flex-direction:column;gap:13px;margin-top:24px;">
+            <div style="display:flex;align-items:center;gap:11px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#DCE7FF;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span style="font:500 15px/1.4 'Inter',sans-serif;color:#111;">16 secciones, de párvulos a jóvenes</span></div>
+            <div style="display:flex;align-items:center;gap:11px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#DCE7FF;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span style="font:500 15px/1.4 'Inter',sans-serif;color:#111;">Inclusión: TEA, Síndrome de Down y más</span></div>
+            <div style="display:flex;align-items:center;gap:11px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#DCE7FF;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span style="font:500 15px/1.4 'Inter',sans-serif;color:#111;">Dinámicas, globoflexia y pintacaritas</span></div>
+          </div>
+          <div style="margin-top:30px;">
+            <a style="display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);color:#fff;font:600 15px/1 'Inter',sans-serif;text-decoration:none;box-shadow:0 10px 24px rgba(31,94,255,.32);transition:filter .2s,transform .2s;" style-hover="filter:brightness(1.07);transform:translateY(-1px);">Comenzar <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SECCIÓN DE MUESTRA (app en uso) ========== -->
+    <div style="flex:0 0 auto;width:1340px;">
+      <div style="font:600 13px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;margin:0 0 12px 4px;">Sección de muestra · La guía en uso (tarjetas desplegables)</div>
+      <div style="width:1340px;height:900px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;overflow:hidden;box-shadow:0 12px 44px rgba(17,17,17,.12);display:flex;">
+
+        <!-- Sidebar -->
+        <aside style="width:300px;flex:0 0 300px;height:100%;background:#F7F8FA;border-right:1px solid #E5E7EB;display:flex;flex-direction:column;">
+          <div style="padding:24px 22px 14px;display:flex;align-items:center;gap:10px;">
+            <div style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);display:flex;align-items:center;justify-content:center;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
+            </div>
+            <div style="font:700 16px/1 'Inter',sans-serif;letter-spacing:-.02em;color:#111;">I AM <span style="color:#1F5EFF;">HELP</span></div>
+          </div>
+          <div style="padding:6px 18px 12px;">
+            <div style="display:flex;align-items:center;gap:10px;height:42px;padding:0 14px;background:#fff;border:1px solid #E5E7EB;border-radius:999px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa1ad" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+              <span style="font:400 14px/1 'Inter',sans-serif;color:#9aa1ad;">Buscar en el manual</span>
+            </div>
+          </div>
+          <div style="padding:6px 14px 24px;overflow-y:auto;flex:1;">
+            <div style="font:700 11px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9aa1ad;padding:10px 10px 8px;">Contenido</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">01</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Introducción</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">02</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">El perfil del maestro</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">03</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Desarrollo por etapas</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">04</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Captar la atención</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;background:#DCE7FF;"><span style="font:700 12px/1 'Inter',sans-serif;color:#1F5EFF;width:20px;">05</span><span style="font:600 14px/1.2 'Inter',sans-serif;color:#1F5EFF;">Niños con discapacidad</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">06</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Niños inquietos o llorando</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">07</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Disciplina con amor</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">08</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Elementos de una enseñanza</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">09</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Contar historias bíblicas</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">10</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Dinámicas, juegos y cantos</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">11</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Globoflexia y pintacaritas</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">12</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Orar con los niños</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">13</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Protección infantil</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">14</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Comunicación con padres</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">15</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Preguntas difíciles</span></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;margin-bottom:3px;cursor:pointer;" style-hover="background:#eceef2;"><span style="font:700 12px/1 'Inter',sans-serif;color:#b3b9c4;width:20px;">16</span><span style="font:500 14px/1.2 'Inter',sans-serif;color:#4A4A4A;">Checklist del maestro</span></div>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <main style="flex:1;height:100%;overflow-y:auto;padding:44px 52px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1F5EFF;">Sección 05</span>
+            <span style="width:4px;height:4px;border-radius:999px;background:#cfd4dc;"></span>
+            <span style="display:inline-flex;align-items:center;height:26px;padding:0 12px;border-radius:999px;background:#F7F8FA;border:1px solid #E5E7EB;font:600 11px/1 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#4A4A4A;">Inclusión</span>
+          </div>
+          <h1 style="margin:0;font:700 42px/1.05 'Inter',sans-serif;letter-spacing:-.03em;color:#111;">Niños con discapacidad</h1>
+          <p style="margin:16px 0 0;font:400 18px/1.6 'Inter',sans-serif;color:#4A4A4A;max-width:74ch;">Cada niño es creación valiosa de Dios, con un lugar y un llamado. Incluir a un niño con discapacidad no es hacerle un favor: es darle el espacio que ya le pertenece. Estas pautas te ayudan a recibir, comprender y acompañar a cada uno según lo que necesita.</p>
+
+          <div style="margin:24px 0 28px;display:flex;gap:16px;align-items:flex-start;background:#DCE7FF;border-radius:16px;padding:20px 22px;">
+            <div style="width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:#1F5EFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="#fff" stroke="none"/></svg>
+            </div>
+            <div style="font:400 15.5px/1.55 'Inter',sans-serif;color:#1a3a8f;"><strong style="font-weight:700;color:#0f2f80;">Regla de oro:</strong> pregunta a los padres. Nadie conoce mejor a ese niño — sus señales, lo que lo calma y lo que lo hace florecer.</div>
+          </div>
+
+          <!-- ===== Card 0 · Autismo (abierta) ===== -->
+          <div style="border:1px solid #E5E7EB;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(17,17,17,.04);margin-bottom:16px;overflow:hidden;">
+            <div onClick="{{ t0 }}" style="display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;" style-hover="background:#fafbfc;">
+              <div style="width:46px;height:46px;flex:0 0 auto;border-radius:13px;background:#DCE7FF;display:flex;align-items:center;justify-content:center;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 14.6 9 21.5 9.3 16.2 13.6 18 20.3 12 16.4 6 20.3 7.8 13.6 2.5 9.3 9.4 9"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font:700 18px/1.2 'Inter',sans-serif;color:#111;letter-spacing:-.01em;">Autismo (TEA)</div>
+                <div style="font:400 14px/1.4 'Inter',sans-serif;color:#6b7280;margin-top:2px;">Afecta la comunicación, la interacción social y el procesamiento de los sentidos.</div>
+              </div>
+              <svg style="{{ c0Chev }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div style="{{ c0Body }}">
+              <div style="padding:6px 22px 2px;">
+                <div style="font:700 11px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#9aa1ad;margin:6px 0 10px;">Cómo se manifiesta</div>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Evita el contacto visual y rechaza el contacto físico inesperado.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Entiende el lenguaje de forma literal; le cuestan bromas y dobles sentidos.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Necesita rutina: los cambios y los ruidos fuertes lo alteran.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Repite movimientos (balanceo, aleteo) o se enfoca mucho en un tema.</span></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 22px 4px;">
+                <div style="background:#F7F8FA;border-radius:14px;padding:18px;">
+                  <div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#1F5EFF;margin-bottom:13px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Qué hacer</div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Usa frases cortas, claras y concretas.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Anticipa los cambios con apoyos visuales (agenda con dibujos).</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Ten a la mano un rincón tranquilo donde pueda calmarse.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Respeta su espacio; no fuerces la mirada ni el contacto.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Conecta a través de aquello que le apasiona.</span></div>
+                </div>
+                <div style="background:#FBF4F4;border-radius:14px;padding:18px;">
+                  <div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#B42318;margin-bottom:13px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B42318" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Qué evitar</div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Obligarlo a mirarte a los ojos o a abrazar.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Usar ironías, sarcasmo o instrucciones ambiguas.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Provocar ruidos, luces o cambios bruscos sin avisar.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Tomar su silencio como desobediencia o exponerlo ante el grupo.</span></div>
+                </div>
+              </div>
+              <div style="margin:14px 22px 22px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);border-radius:14px;padding:16px 20px;">
+                <svg width="20" height="20" style="flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 14.6 9 21.5 9.3 16.2 13.6 18 20.3 12 16.4 6 20.3 7.8 13.6 2.5 9.3 9.4 9"/></svg>
+                <span style="font:600 15.5px/1.4 'Inter',sans-serif;color:#fff;">Estructura, calma y anticipación: lo predecible le da seguridad.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== Card 1 · Síndrome de Down (cerrada) ===== -->
+          <div style="border:1px solid #E5E7EB;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(17,17,17,.04);margin-bottom:16px;overflow:hidden;">
+            <div onClick="{{ t1 }}" style="display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;" style-hover="background:#fafbfc;">
+              <div style="width:46px;height:46px;flex:0 0 auto;border-radius:13px;background:#DCE7FF;display:flex;align-items:center;justify-content:center;">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font:700 18px/1.2 'Inter',sans-serif;color:#111;letter-spacing:-.01em;">Síndrome de Down</div>
+                <div style="font:400 14px/1.4 'Inter',sans-serif;color:#6b7280;margin-top:2px;">Condición genética (trisomía 21): ritmo de aprendizaje más pausado y gran calidez afectiva.</div>
+              </div>
+              <svg style="{{ c1Chev }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div style="{{ c1Body }}">
+              <div style="padding:6px 22px 2px;">
+                <div style="font:700 11px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#9aa1ad;margin:6px 0 10px;">Cómo se manifiesta</div>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Aprende más despacio; necesita repaso y repetición.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">El lenguaje y la motricidad pueden ir más lentos que su edad.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Es muy afectuoso, sociable y sensible al trato.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Se cansa o se distrae en tareas largas.</span></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 22px 4px;">
+                <div style="background:#F7F8FA;border-radius:14px;padding:18px;">
+                  <div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#1F5EFF;margin-bottom:13px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Qué hacer</div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Da una instrucción a la vez y repite con cariño.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Apóyate en imágenes, gestos y ejemplos concretos.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Celebra cada logro; refuerza lo positivo.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Divide la actividad en partes cortas con pausas.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Háblale según su edad, nunca como a un bebé.</span></div>
+                </div>
+                <div style="background:#FBF4F4;border-radius:14px;padding:18px;">
+                  <div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#B42318;margin-bottom:13px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B42318" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Qué evitar</div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Hacer las cosas por él: deja que intente y participe.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Compararlo con los demás o meterle prisa.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Usar voz de bebé o infantilizarlo.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Dar varias órdenes a la vez.</span></div>
+                </div>
+              </div>
+              <div style="margin:14px 22px 22px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);border-radius:14px;padding:16px 20px;">
+                <svg width="20" height="20" style="flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
+                <span style="font:600 15.5px/1.4 'Inter',sans-serif;color:#fff;">Mismo cariño, mismas expectativas: solo más tiempo y más repaso.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== Card 2 · Discapacidad intelectual (cerrada) ===== -->
+          <div style="border:1px solid #E5E7EB;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(17,17,17,.04);margin-bottom:4px;overflow:hidden;">
+            <div onClick="{{ t2 }}" style="display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;" style-hover="background:#fafbfc;">
+              <div style="width:46px;height:46px;flex:0 0 auto;border-radius:13px;background:#DCE7FF;display:flex;align-items:center;justify-content:center;">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.9 11.7c.5.4.9 1 1 1.8h5.8c.1-.8.5-1.4 1-1.8A6.5 6.5 0 0 0 12 2.5z"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font:700 18px/1.2 'Inter',sans-serif;color:#111;letter-spacing:-.01em;">Discapacidad intelectual</div>
+                <div style="font:400 14px/1.4 'Inter',sans-serif;color:#6b7280;margin-top:2px;">Limitaciones en el aprendizaje y el razonamiento. Cada niño avanza a su propio ritmo.</div>
+              </div>
+              <svg style="{{ c2Chev }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div style="{{ c2Body }}">
+              <div style="padding:6px 22px 2px;">
+                <div style="font:700 11px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#9aa1ad;margin:6px 0 10px;">Cómo se manifiesta</div>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Le cuestan las ideas abstractas; aprende mejor con lo concreto.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Necesita más tiempo para procesar y responder.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">Puede olvidar pasos o instrucciones largas.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:6px;height:6px;border-radius:999px;background:#1F5EFF;margin-top:8px;flex:0 0 auto;"></span><span style="font:400 15px/1.5 'Inter',sans-serif;color:#4A4A4A;">A veces le cuesta seguir el ritmo del grupo.</span></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 22px 4px;">
+                <div style="background:#F7F8FA;border-radius:14px;padding:18px;">
+                  <div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#1F5EFF;margin-bottom:13px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Qué hacer</div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Enseña con objetos, imágenes y experiencias reales.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Repite, repasa y confirma que entendió.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Divide todo en pasos cortos y simples.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Dale tiempo extra y un compañero de apoyo.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#1F5EFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Refuerza cada avance, por pequeño que sea.</span></div>
+                </div>
+                <div style="background:#FBF4F4;border-radius:14px;padding:18px;">
+                  <div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#B42318;margin-bottom:13px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B42318" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Qué evitar</div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Dar explicaciones largas o abstractas.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Apurarlo o avergonzarlo si no entiende.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Bajar las expectativas más de lo necesario.</span></div>
+                  <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#23262d;">Dejarlo fuera de las actividades del grupo.</span></div>
+                </div>
+              </div>
+              <div style="margin:14px 22px 22px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1F5EFF,#3D73FF);border-radius:14px;padding:16px 20px;">
+                <svg width="20" height="20" style="flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.9 11.7c.5.4.9 1 1 1.8h5.8c.1-.8.5-1.4 1-1.8A6.5 6.5 0 0 0 12 2.5z"/></svg>
+                <span style="font:600 15.5px/1.4 'Inter',sans-serif;color:#fff;">Concreto, paso a paso y con mucho refuerzo positivo.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;align-items:center;gap:10px;color:#9aa1ad;font:500 13px/1.4 'Inter',sans-serif;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa1ad" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="#9aa1ad" stroke="none"/></svg>
+            En la guía final esta sección incluirá también discapacidad auditiva, visual, motora y dificultades de aprendizaje.
+          </div>
+        </main>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: [true, false, false] };
+
+  toggle(i) {
+    this.setState(s => {
+      const open = s.open.slice();
+      open[i] = !open[i];
+      return { open };
+    });
+  }
+
+  bodyStyle(isOpen) {
+    return isOpen
+      ? { display: "block", borderTop: "1px solid #EEF0F3", paddingTop: "4px" }
+      : { display: "none" };
+  }
+
+  chevStyle(isOpen) {
+    return {
+      width: "22px",
+      height: "22px",
+      flex: "0 0 auto",
+      color: "#aeb4bf",
+      transition: "transform .25s ease",
+      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+    };
+  }
+
+  renderVals() {
+    const o = this.state.open;
+    return {
+      t0: () => this.toggle(0),
+      t1: () => this.toggle(1),
+      t2: () => this.toggle(2),
+      c0Body: this.bodyStyle(o[0]),
+      c1Body: this.bodyStyle(o[1]),
+      c2Body: this.bodyStyle(o[2]),
+      c0Chev: this.chevStyle(o[0]),
+      c1Chev: this.chevStyle(o[1]),
+      c2Chev: this.chevStyle(o[2]),
+    };
+  }
+}
+</script>
+</body>
+</html>
