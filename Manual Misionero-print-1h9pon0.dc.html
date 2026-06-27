@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
@@ -10,12 +19,12 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;}
     html,body{margin:0;height:100%;}
-    body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:#EAF3FF;}
-    ::selection{background:#C0DCFF;}
+    body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F3EADB;}
+    ::selection{background:#E7D7BC;}
     image-slot{display:block !important;width:100% !important;height:100% !important;}
     [data-nav]:hover{background:#F1E8D7;}
     [data-scroll]{scrollbar-width:thin;scrollbar-color:#D9C9A8 transparent;}
@@ -34,15 +43,10 @@
   </svg>
 </template>
 
-<div style="height:100vh;display:flex;overflow:hidden;background:#EAF3FF;color:#2A2520;">
-
-  <!-- ===================== OVERLAY MÓVIL ===================== -->
-  <sc-if value="{{ navOpen }}">
-    <div onClick="{{ closeNav }}" style="position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:200;backdrop-filter:blur(2px);"></div>
-  </sc-if>
+<div style="height:100vh;display:flex;overflow:hidden;background:#FAF5EA;color:#2A2520;">
 
   <!-- ===================== SIDEBAR ===================== -->
-  <aside style="width:312px;flex:0 0 312px;height:100%;background:#D6EAFF;border-right:1px solid #B8D4F0;display:flex;flex-direction:column;">
+  <aside style="width:312px;flex:0 0 312px;height:100%;background:#F6EFDF;border-right:1px solid #E6DBC7;display:flex;flex-direction:column;">
     <div style="padding:24px 22px 16px;display:flex;align-items:center;gap:11px;">
       <div style="width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#8B6F47,#5A4632);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(90,70,50,.30);">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg>
@@ -71,11 +75,8 @@
   <div style="flex:1;height:100%;display:flex;flex-direction:column;min-width:0;">
 
     <!-- top bar -->
-    <div style="height:64px;flex:0 0 64px;border-bottom:1px solid #B8D4F0;background:rgba(234,243,255,.90);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 32px;">
+    <div style="height:64px;flex:0 0 64px;border-bottom:1px solid #E6DBC7;background:rgba(250,245,234,.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 32px;">
       <div style="display:flex;align-items:center;gap:10px;font:600 14px/1 'Inter',sans-serif;color:#9a8f7c;">
-        <button onClick="{{ toggleNav }}" style="width:36px;height:36px;border-radius:8px;background:transparent;border:1px solid #B8D4F0;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;outline:none;" title="Menú">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5A7FA8" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
         <span>Manual misionero</span>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cfc2a6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         <span style="color:#5A4632;font-weight:700;">{{ breadcrumb }}</span>
@@ -401,9 +402,6 @@
             <div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17.5" cy="9" r="2.4"/><path d="M16.5 14.5a5 5 0 0 1 4.5 5"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Compañero de apoyo</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Un niño guía que lo acompaña con naturalidad.</div></div>
           </div>
 
-          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Trátalo según su edad, no según su condición</span></div>
-          <div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px 24px;"><p style="margin:0 0 14px;font:400 15.5px/1.6 'Inter',sans-serif;color:#3a342b;">Uno de los errores más comunes al trabajar con niños con discapacidad es hablarles o tratarlos como si fueran más pequeños de lo que son. Un niño con síndrome de Down de 10 años <strong>tiene 10 años</strong>: merece el mismo respeto, los mismos retos y las mismas expectativas ajustadas que cualquier niño de su edad.</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;"><div style="display:flex;gap:10px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:3px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14px/1.5 'Inter',sans-serif;color:#3a342b;">Habla con él directamente, no a través de su acompañante.</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:3px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14px/1.5 'Inter',sans-serif;color:#3a342b;">Usa su nombre, míralo a los ojos y espera su respuesta.</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:3px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14px/1.5 'Inter',sans-serif;color:#3a342b;">Adapta las actividades sin infantilizarlas más de lo necesario.</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:3px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14px/1.5 'Inter',sans-serif;color:#3a342b;">Celebra sus logros con la misma alegría que los de cualquier otro niño.</span></div></div></div>
-
           <!-- CLOSING -->
           <div style="margin-top:34px;position:relative;overflow:hidden;border-radius:22px;background:#2E2419;color:#fff;padding:34px 38px;">
             <div style="position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:999px;background:rgba(217,194,154,.08);"></div>
@@ -581,10 +579,6 @@
           <div style="margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:#EFE3CC;border-radius:18px;padding:18px 20px;"><div style="width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:#8B6F47;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="#fff" stroke="none"/></svg></div><div style="font:400 15.5px/1.55 'Inter',sans-serif;color:#5a4a30;"><strong style="font-weight:700;color:#4a3a22;">Recuerda:</strong> las manualidades, los juegos y los globos son un recurso, nunca la finalidad de la enseñanza. El centro siempre es Jesús.</div></div>
           <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Pautas para enseñar</span></div>
           <div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px 24px;"><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Ora antes de enseñar y pide al Espíritu Santo que guíe todo.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Repasa y estudia tu enseñanza varias veces; al menos una vez en voz alta.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Chequea el tiempo.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Mantén el enfoque en Jesús: Él es la razón y el centro de todo.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Habla con sinceridad y desde tu experiencia. Sé genuino.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Recuerda dar gracias por la oportunidad.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Confía en que Dios usará lo que digas; por eso no te dejes dominar por los nervios.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">No te salgas de lo que preparaste sin la guía del Espíritu Santo.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Ensaya y entrena la voz para modelarla en coherencia con lo que dices.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><svg width="17" height="17" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 15px/1.5 'Inter',sans-serif;color:#3a342b;">Nunca tomes en serio los comentarios: ni los que adulan (jamás tomes la gloria) ni los que menosprecian.</span></div></div>
-          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Habla claro, no en cristianés</span></div>
-          <div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px 24px;margin-bottom:14px;"><p style="margin:0 0 14px;font:400 15.5px/1.6 'Inter',sans-serif;color:#3a342b;">Los niños —y muchos adultos no creyentes— no entienden el vocabulario interno de la iglesia. Palabras como "redención", "expiación", "justificación" o "el Señor me habló" pueden sonar vacías o confusas para quien no creció en la iglesia. En misiones, siempre hablas a alguien de fuera.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="background:#F7ECE4;border-radius:12px;padding:14px 16px;"><div style="font:700 13px/1 'Inter',sans-serif;color:#a8502c;margin-bottom:10px;">En vez de decir...</div><div style="font:400 14px/1.6 'Inter',sans-serif;color:#3a342b;">"Ser salvo" · "La sangre del Cordero" · "Estar en el Espíritu" · "El diezmo"</div></div><div style="background:#EDF4E8;border-radius:12px;padding:14px 16px;"><div style="font:700 13px/1 'Inter',sans-serif;color:#5d7a3a;margin-bottom:10px;">Di mejor...</div><div style="font:400 14px/1.6 'Inter',sans-serif;color:#3a342b;">"Conocer a Jesús" · "Jesús murió por nosotros" · "Sentir a Dios cerca" · "Dar parte de lo que Dios te da"</div></div></div></div>
-          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Siempre déjales un versículo</span></div>
-          <div style="display:flex;gap:14px;align-items:flex-start;background:#EFE3CC;border-radius:18px;padding:18px 20px;margin-bottom:14px;"><div style="width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:#8B6F47;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h13"/><path d="M19 4v16H6a2 2 0 0 1 0-4h13"/></svg></div><div style="font:400 15.5px/1.55 'Inter',sans-serif;color:#5a4a30;"><strong style="font-weight:700;color:#4a3a22;">La Palabra permanece.</strong> Las personas olvidan ilustraciones, juegos y canciones — pero un versículo aprendido de memoria es una semilla que Dios puede hacer germinar años después. Siempre termina dejándoles <em>un versículo concreto</em>: uno solo, corto, que puedan repetir y que resuma la verdad central de la enseñanza.</div></div>
           <div style="margin-top:24px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#8B6F47,#5A4632);border-radius:14px;padding:16px 20px;"><svg width="22" height="22" style="flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#E7D7BC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 14.6 9 21.5 9.3 16.2 13.6 18 20.3 12 16.4 6 20.3 7.8 13.6 2.5 9.3 9.4 9"/></svg><span style="font:600 15.5px/1.4 'Inter',sans-serif;color:#fff;">&ldquo;No se trata de lo que tú puedes hacer por Dios, sino de lo que Cristo hizo por ti.&rdquo; — Mark Hankins</span></div>
         </div>
       </sc-if>
@@ -673,59 +667,11 @@
           </div>
           <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Globoflexia: antes de empezar</span></div>
           <div style="margin-top:24px;display:flex;gap:14px;align-items:flex-start;background:#EFE3CC;border-radius:18px;padding:18px 20px;"><div style="width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:#8B6F47;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="#fff" stroke="none"/></svg></div><div style="font:400 15.5px/1.55 'Inter',sans-serif;color:#5a4a30;"><strong style="font-weight:700;color:#4a3a22;">Material:</strong> globos modeladores #260, una bomba de inflar (nunca con la boca en los largos) y deja siempre una “cola” sin inflar de 8–10 cm para que no reviente al torcer.</div></div>
-          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">5 figuras paso a paso</span></div>
-          <!-- TABS de figuras -->
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
-            <sc-for list="{{ gfTabs }}" as="t" hint-placeholder-count="5">
-              <button onClick="{{ t.onClick }}" style="{{ t.tabStyle }}">{{ t.name }}</button>
-            </sc-for>
-          </div>
-          <!-- Panel de paso actual -->
-          <div style="background:#fff;border:1px solid #E6DBC7;border-radius:20px;padding:28px 32px;min-height:130px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-              <span style="width:36px;height:36px;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 15px/1 'Inter',sans-serif;flex:0 0 auto;">{{ gfCurStep }}</span>
-              <span style="font:600 13px/1 'Inter',sans-serif;color:#9a8f7c;">de {{ gfTotalSteps }} · {{ gfFigName }}</span>
-            </div>
-            <p style="margin:0;font:400 18px/1.6 'Inter',sans-serif;color:#2A2520;">{{ gfStepText }}</p>
-          </div>
-          <!-- Controles Anterior / Siguiente / Reiniciar -->
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px;">
-            <button onClick="{{ gfPrev }}" style="{{ gfPrevStyle }}">← Anterior</button>
-            <button onClick="{{ gfReset }}" style="padding:9px 18px;borderRadius:999px;background:transparent;color:#9a8f7c;font:500 13px/1 'Inter',sans-serif;cursor:pointer;border:1px solid #E6DBC7;outline:none;">Empezar de nuevo</button>
-            <button onClick="{{ gfNext }}" style="{{ gfNextStyle }}">Siguiente →</button>
-          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">3 figuras paso a paso</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;"><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;"><div style="width:44px;height:44px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5 4 7V4h3l10.5 10.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/></svg></div><div style="font:700 17px/1.2 'Inter',sans-serif;color:#2A2520;">Espada</div></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">1</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Infla casi todo el globo, dejando 8 cm de cola.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">2</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">A 12–15 cm de la boquilla haz un primer giro: será el mango.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">3</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Dobla esa sección en U y haz un giro de bloqueo: ya tienes la empuñadura.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">4</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Forma una burbuja pequeña y enróllala para hacer la guarda (la cruz).</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">5</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">El resto del globo es la hoja. ¡Lista!</span></div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;"><div style="width:44px;height:44px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><div style="font:700 17px/1.2 'Inter',sans-serif;color:#2A2520;">Flor</div></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">1</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Infla el globo dejando 3–4 cm de cola.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">2</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Une las dos puntas con un nudo: se forma un gran aro.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">3</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Divide el aro en 5 partes iguales con giros: serán los pétalos.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">4</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Junta los giros del centro y tuércelos para fijar los pétalos.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">5</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Con un globo verde haz el tallo y enróscalo al centro.</span></div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;"><div style="width:44px;height:44px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="11" r="1.7"/><circle cx="10" cy="7.5" r="1.7"/><circle cx="14" cy="7.5" r="1.7"/><circle cx="18" cy="11" r="1.7"/><path d="M8.5 15.5a3.5 3.5 0 0 1 7 0 2.5 2.5 0 0 1-2.5 2.5h-2a2.5 2.5 0 0 1-2.5-2.5z"/></svg></div><div style="font:700 17px/1.2 'Inter',sans-serif;color:#2A2520;">Perrito</div></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">1</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Infla el globo dejando 8 cm de cola.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">2</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Haz 3 burbujas seguidas y enrolla 2ª y 3ª: hocico y orejas.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">3</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Haz 2 burbujas más y enróllalas: las patas delanteras.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">4</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Deja un tramo para el cuerpo y haz otras 2 burbujas: patas traseras.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;"><span style="width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 'Inter',sans-serif;">5</span><span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#4f463a;">Lo que sobra es la cola. ¡Tu perrito está listo!</span></div></div></div>
           <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Pintacaritas: seguridad y diseños</span></div>
           <div style="margin-top:24px;display:flex;gap:14px;align-items:flex-start;background:#EFE3CC;border-radius:18px;padding:18px 20px;"><div style="width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:#8B6F47;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="#fff" stroke="none"/></svg></div><div style="font:400 15.5px/1.55 'Inter',sans-serif;color:#5a4a30;"><strong style="font-weight:700;color:#4a3a22;">Seguridad:</strong> usa solo pintura al agua hipoalergénica y homologada. Pregunta por alergias, nunca pintes muy cerca de los ojos ni sobre piel irritada, y limpia esponjas y pinceles entre un niño y otro.</div></div>
-          <!-- Tarjetas desplegables de pintacaritas -->
-          <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
-            <sc-for list="{{ pcCards }}" as="c" hint-placeholder-count="4">
-              <div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;overflow:hidden;">
-                <div onClick="{{ c.onClick }}" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:12px;">
-                  <div style="display:flex;align-items:center;gap:12px;">
-                    <div style="font:700 16px/1.3 'Inter',sans-serif;color:#2A2520;">{{ c.name }}</div>
-                    <span style="font:500 12px/1 'Inter',sans-serif;color:#8B6F47;background:#EFE3CC;padding:4px 10px;border-radius:999px;">{{ c.dificultad }}</span>
-                  </div>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9a8f7c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <sc-if value="{{ c.open }}">
-                  <div style="padding:0 22px 22px;border-top:1px solid #F0EBE1;">
-                    <p style="margin:14px 0 10px;font:400 15px/1.55 'Inter',sans-serif;color:#5a5044;">{{ c.desc }}</p>
-                    <div style="margin-top:14px;font:700 11px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:10px;">Pasos</div>
-                    <sc-for list="{{ c.pasos }}" as="paso" hint-placeholder-count="4">
-                      <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;">
-                        <span style="width:22px;height:22px;flex:0 0 auto;border-radius:999px;background:#8B6F47;color:#fff;display:flex;align-items:center;justify-content:center;font:700 11px/1 'Inter',sans-serif;">·</span>
-                        <span style="font:400 14px/1.5 'Inter',sans-serif;color:#3a342b;">{{ paso }}</span>
-                      </div>
-                    </sc-for>
-                    <div style="margin-top:14px;background:#FBF6EC;border-radius:12px;padding:12px 16px;">
-                      <span style="font:700 12px/1 'Inter',sans-serif;color:#8B6F47;">💡 Tip: </span>
-                      <span style="font:400 13.5px/1.5 'Inter',sans-serif;color:#5a4a30;">{{ c.tip }}</span>
-                    </div>
-                  </div>
-                </sc-if>
-              </div>
-            </sc-for>
-          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;"><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-3.6-4-6.4-9-6.4z"/><circle cx="7.5" cy="11" r="1"/><circle cx="12" cy="8" r="1"/><circle cx="16" cy="11" r="1"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Mariposa</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Antifaz sobre los ojos, alas a los lados, puntos y líneas. Rápida y favorita.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-3.6-4-6.4-9-6.4z"/><circle cx="7.5" cy="11" r="1"/><circle cx="12" cy="8" r="1"/><circle cx="16" cy="11" r="1"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Araña / héroe</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Base roja en la cara y malla negra en líneas finas. Ideal para niños.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Corazón / estrella</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Diseños pequeños en la mejilla: rapidísimos para filas largas.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="11" r="1.7"/><circle cx="10" cy="7.5" r="1.7"/><circle cx="14" cy="7.5" r="1.7"/><circle cx="18" cy="11" r="1.7"/><path d="M8.5 15.5a3.5 3.5 0 0 1 7 0 2.5 2.5 0 0 1-2.5 2.5h-2a2.5 2.5 0 0 1-2.5-2.5z"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Tigre / gatito</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Nariz negra, bigotes y rayas; base naranja o blanca.</div></div></div>
           <div style="margin-top:24px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#8B6F47,#5A4632);border-radius:14px;padding:16px 20px;"><svg width="20" height="20" style="flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#E7D7BC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 7C19 16.65 12 21 12 21z"/></svg><span style="font:600 15.5px/1.4 'Inter',sans-serif;color:#fff;">Una sonrisa pintada abre puertas que mil palabras no abren.</span></div>
         </div>
       </sc-if>
@@ -797,7 +743,7 @@
             <div style="position:absolute;left:-60px;top:-70px;width:180px;height:180px;border-radius:999px;border:1.5px solid rgba(255,255,255,.10);"></div>
             <div style="position:relative;">
               <span style="display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);font:700 11px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;">Sección 14 · Comunidad</span>
-              <h1 style="margin:18px 0 0;font:700 46px/1.04 'Inter',sans-serif;letter-spacing:-.035em;max-width:18ch;">Comunicación con padres y cuidadores</h1>
+              <h1 style="margin:18px 0 0;font:700 46px/1.04 'Inter',sans-serif;letter-spacing:-.035em;max-width:18ch;">Comunicación con los padres</h1>
               <div style="margin-top:20px;display:flex;align-items:flex-start;gap:12px;max-width:62ch;">
                 <span style="font:700 40px/0.7 Georgia,serif;color:#D9C29A;flex:0 0 auto;">&ldquo;</span>
                 <div><div style="font:500 17px/1.55 'Inter',sans-serif;color:#F0E7D6;">No tengo yo mayor gozo que este, el oír que mis hijos andan en la verdad.</div><div style="margin-top:6px;font:700 12px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#D9C29A;">3 Juan 1:4</div></div>
@@ -861,39 +807,8 @@
             </div>
           </div>
           <p style="margin:30px 0 0;font:400 18px/1.65 'Inter',sans-serif;color:#4f463a;">La excelencia está en los detalles. Esta lista te ayuda a no olvidar nada — imprímela, pégala en tu salón y revísala cada semana.</p>
-          <!-- Contador y barra de progreso -->
-          <div style="display:flex;align-items:center;justify-content:space-between;margin:40px 0 12px;">
-            <div style="display:flex;align-items:center;gap:12px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Tu lista semanal</span></div>
-            <span style="font:700 14px/1 'Inter',sans-serif;color:#8B6F47;">{{ checkDone }} / {{ checkTotal }} completado</span>
-          </div>
-          <div style="background:#E6DBC7;border-radius:999px;height:8px;overflow:hidden;margin-bottom:20px;">
-            <div style="{{ checkProgressStyle }}"></div>
-          </div>
-          <!-- Grupos de checklist interactivos -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-            <sc-for list="{{ checkGroups }}" as="grp" hint-placeholder-count="3">
-              <div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;">
-                <div style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:16px;">{{ grp.cat }}</div>
-                <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="5">
-                  <div onClick="{{ item.onClick }}" style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;cursor:pointer;">
-                    <sc-if value="{{ item.done }}">
-                      <span style="width:20px;height:20px;flex:0 0 auto;border-radius:6px;background:#8B6F47;display:flex;align-items:center;justify-content:center;margin-top:1px;">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                      </span>
-                    </sc-if>
-                    <sc-if value="{{ !item.done }}">
-                      <span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span>
-                    </sc-if>
-                    <span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">{{ item.label }}</span>
-                  </div>
-                </sc-for>
-              </div>
-            </sc-for>
-          </div>
-          <!-- Botón Reiniciar -->
-          <div style="display:flex;justify-content:flex-end;margin-top:16px;">
-            <button onClick="{{ resetChecks }}" style="padding:9px 20px;border-radius:999px;background:transparent;color:#9a8f7c;font:500 13px/1 'Inter',sans-serif;cursor:pointer;border:1px solid #E6DBC7;outline:none;">Reiniciar lista</button>
-          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Tu lista semanal</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;"><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;"><div style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:16px;">Antes de la clase</div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Ora por cada niño por su nombre.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Prepara la lección y la idea central.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Alista materiales, manualidad y dinámica.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Llega 15 minutos antes.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Revisa el salón: limpio y seguro.</span></div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;"><div style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:16px;">Durante la clase</div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Recibe a cada niño con alegría.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Sigue la estructura de la clase.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Incluye a todos, también a los más callados.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Mantén las reglas con firmeza y cariño.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Aplica la verdad a su vida.</span></div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:22px;"><div style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:16px;">Después de la clase</div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Entrega cada niño a quien lo autoriza.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Comparte algo del día con los padres.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Ordena y guarda los materiales.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Anota seguimiento y peticiones.</span></div><div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;"><span style="width:20px;height:20px;flex:0 0 auto;border:2px solid #C9B98F;border-radius:6px;margin-top:1px;"></span><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Evalúa: ¿qué aprendieron de Cristo hoy?</span></div></div></div>
           <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">El kit del maestro</span></div>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;"><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h13"/><path d="M19 4v16H6a2 2 0 0 1 0-4h13"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Biblia y plan de clase</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Tu base, siempre lista.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-3.6-4-6.4-9-6.4z"/><circle cx="7.5" cy="11" r="1"/><circle cx="12" cy="8" r="1"/><circle cx="16" cy="11" r="1"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Materiales de arte</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Colores, papel, tijeras y pegamento.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Cantos y dinámicas</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Bocina o repertorio a mano.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 14.6 9 21.5 9.3 16.2 13.6 18 20.3 12 16.4 6 20.3 7.8 13.6 2.5 9.3 9.4 9"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Premios y stickers</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Para reforzar lo positivo.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Botiquín y fichas</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">Primeros auxilios y datos de cada niño.</div></div><div style="background:#fff;border:1px solid #E6DBC7;border-radius:18px;padding:20px;"><div style="width:42px;height:42px;border-radius:12px;background:#EFE3CC;display:flex;align-items:center;justify-content:center;margin-bottom:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V7.2a1.6 1.6 0 0 0-3.2 0M14.8 7.5V5.4a1.6 1.6 0 0 0-3.2 0v2.1M11.6 7.8V6.4a1.6 1.6 0 0 0-3.2 0V13"/><path d="M8.4 12.5 7.1 11a1.6 1.6 0 0 0-2.5 2l2.2 3.2A6 6 0 0 0 12 19h.5a5.5 5.5 0 0 0 5.5-5.5V11a1.6 1.6 0 0 0-3.2 0"/></svg></div><div style="font:700 15px/1.3 'Inter',sans-serif;color:#2A2520;margin-bottom:5px;">Un corazón dispuesto</div><div style="font:400 13.5px/1.5 'Inter',sans-serif;color:#7a7062;">La herramienta más importante de todas.</div></div></div>
           <div style="margin-top:34px;position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(135deg,#8B6F47,#5A4632);color:#fff;padding:34px 38px;"><div style="position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:999px;background:rgba(255,255,255,.06);"></div><div style="position:relative;font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#E7D7BC;">Bendición final</div><div style="position:relative;margin-top:12px;font:700 26px/1.25 'Inter',sans-serif;letter-spacing:-.02em;max-width:26ch;">Has sido llamado a una misión eterna.</div><div style="position:relative;margin-top:12px;font:400 15.5px/1.6 'Inter',sans-serif;color:#F0E7D6;max-width:62ch;">Cada domingo siembras semillas que darán fruto por generaciones. Gracias por decir “sí” a los más pequeños. “¡Bien, buen siervo y fiel!”</div></div>
@@ -961,8 +876,6 @@
           <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Ministrar en el poder del Espíritu sin asustar a los niños</span></div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;"><div style="background:#F6EFDF;border-radius:16px;padding:20px;"><div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#5d7a3a;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Qué hacer</div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Orar por ellos con sencillez.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Imponer manos cuando sea apropiado.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Hablar de Jesús y de su amor.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Ministrar amor y paz.</span></div></div><div style="background:#F7ECE4;border-radius:16px;padding:20px;"><div style="display:flex;align-items:center;gap:8px;font:700 14px/1 'Inter',sans-serif;color:#a8502c;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a8502c" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Qué evitar</div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Gritar o crear miedo.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Presionarlos a &ldquo;reaccionar&rdquo;.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Manipular las emociones.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Intentar producir manifestaciones.</span></div></div></div>
           <div style="margin-top:24px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#8B6F47,#5A4632);border-radius:14px;padding:16px 20px;"><svg width="22" height="22" style="flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#E7D7BC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><span style="font:600 15.5px/1.4 'Inter',sans-serif;color:#fff;">Seguimos al Espíritu Santo; no tratamos de reemplazarlo.</span></div>
-          <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">Reglas de seguridad al ministrar niños</span></div>
-          <div style="background:#F7ECE4;border:1.5px solid #E6C4AD;border-radius:18px;padding:22px 24px;"><div style="font:700 15px/1 'Inter',sans-serif;color:#a8502c;margin-bottom:14px;">Normas que no son opcionales</div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:10px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;"><strong>No toques ni impongas manos a ningún niño sin su permiso explícito</strong> y sin el conocimiento del responsable adulto presente.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:10px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">La imposición de manos en un contexto de misión solo es apropiada <strong>si la iglesia local y el líder responsable lo autorizan</strong> expresamente para ese momento.</span></div><div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:10px;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#bb5e38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">Si un niño no quiere que ores con imposición de manos, <strong>respeta su decisión sin presión</strong>: puedes orar en voz alta por él sin tocarlo.</span></div><div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" style="margin-top:2px;flex:0 0 auto;" viewBox="0 0 24 24" fill="none" stroke="#5d7a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font:400 14.5px/1.45 'Inter',sans-serif;color:#3a342b;">El Espíritu Santo no necesita contacto físico para moverse: tu oración en voz alta y con fe es suficiente y completamente válida.</span></div></div>
           <div style="display:flex;align-items:center;gap:12px;margin:40px 0 18px;"><span style="width:26px;height:3px;border-radius:2px;background:#8B6F47;"></span><span style="font:700 12px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B6F47;">La Palabra</span></div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;"><div style="position:relative;overflow:hidden;background:#FBF6EC;border:1px solid #E6DBC7;border-radius:20px;padding:24px 24px 22px;"><span style="position:absolute;right:14px;top:-18px;font:700 110px/1 Georgia,serif;color:#EFE3CC;pointer-events:none;">&rdquo;</span><div style="position:relative;font:500 17px/1.5 'Inter',sans-serif;color:#2A2520;">El Consolador, el Espíritu Santo, a quien el Padre enviará en mi nombre, os enseñará todas las cosas.</div><span style="position:relative;display:inline-flex;margin-top:14px;height:28px;padding:0 13px;align-items:center;border-radius:999px;background:#EFE3CC;font:700 12px/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8B6F47;">Juan 14:26</span></div><div style="position:relative;overflow:hidden;background:#FBF6EC;border:1px solid #E6DBC7;border-radius:20px;padding:24px 24px 22px;"><span style="position:absolute;right:14px;top:-18px;font:700 110px/1 Georgia,serif;color:#EFE3CC;pointer-events:none;">&rdquo;</span><div style="position:relative;font:500 17px/1.5 'Inter',sans-serif;color:#2A2520;">En mi nombre echarán fuera demonios... sobre los enfermos pondrán sus manos, y sanarán.</div><span style="position:relative;display:inline-flex;margin-top:14px;height:28px;padding:0 13px;align-items:center;border-radius:999px;background:#EFE3CC;font:700 12px/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8B6F47;">Marcos 16:17-18</span></div></div>
         </div>
@@ -1044,15 +957,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = {
-    current: "intro",
-    open: [true, false, false],
-    navOpen: false,
-    gfFig: 0,
-    gfStep: 0,
-    pcOpen: -1,
-    checked: (() => { try { return JSON.parse(localStorage.getItem("iamhelp_checklist") || "{}"); } catch(e) { return {}; } })(),
-  };
+  state = { current: "intro", open: [true, false, false] };
 
   SECTIONS = [
     { num: "01", id: "intro", title: "Introducción" },
@@ -1078,71 +983,13 @@ class Component extends DCLogic {
   ];
   BUILT = ["intro","perfil","etapas","atencion","discapacidad","inquietos","disciplina","ensenanza","historias","dinamicas","manualidades","oracion","proteccion","padres","preguntas","checklist","fundamentos","espiritu","sanidad","misionero"];
 
-  GFIG = [
-    { name: "Espada", steps: ["Infla casi todo el globo, dejando 8 cm de cola.", "A 12–15 cm de la boquilla haz un primer giro: será el mango.", "Dobla esa sección en U y haz un giro de bloqueo: ya tienes la empuñadura.", "Forma una burbuja pequeña y enróllala para hacer la guarda (la cruz).", "El resto del globo es la hoja. ¡Lista!"] },
-    { name: "Flor", steps: ["Infla el globo dejando 3–4 cm de cola.", "Une las dos puntas con un nudo: se forma un gran aro.", "Divide el aro en 5 partes iguales con giros: serán los pétalos.", "Junta los giros del centro y tuércelos para fijar los pétalos.", "Con un globo verde haz el tallo y enróscalo al centro."] },
-    { name: "Perrito", steps: ["Infla el globo dejando 8 cm de cola.", "Haz 3 burbujas seguidas y enrolla 2ª y 3ª: hocico y orejas.", "Haz 2 burbujas más y enróllalas: las patas delanteras.", "Deja un tramo para el cuerpo y haz otras 2 burbujas: patas traseras.", "Lo que sobra es la cola. ¡Tu perrito está listo!"] },
-    { name: "Jirafa", steps: ["Infla el globo dejando 10 cm de cola.", "Haz una burbuja larga (el cuello) cerca de la boquilla y bloquéala.", "Haz 4 burbujas medianas y enróllalas de a dos: las patas delanteras.", "Deja un segmento para el cuerpo y haz otras 4 burbujas: patas traseras.", "El globo restante forma la cabeza; añade burbujas pequeñas para las orejas."] },
-    { name: "Corona", steps: ["Infla el globo por completo y une los extremos con un nudo.", "Divide el aro en 3 partes iguales haciendo giros equidistantes.", "Levanta la parte central hacia arriba y bloquéala: primer pico de la corona.", "Repite dividiendo los dos arcos restantes para crear más picos siméticos.", "Ajusta los picos y coloca la corona sobre la cabeza. ¡Listo, rey misionero!"] },
-  ];
-
-  PINTA = [
-    { name: "Mariposa", dificultad: "Fácil", desc: "Antifaz sobre los ojos, alas a los lados, puntos y líneas. Rápida y favorita.", tip: "Usa una esponja para la base y un pincel fino para los detalles.", pasos: ["Aplica base del color principal en frente y mejillas con esponja.", "Dibuja el contorno del antifaz con pincel y pintura negra.", "Añade puntos de colores en las alas.", "Remata con destellos blancos para dar brillo."] },
-    { name: "Araña / Héroe", dificultad: "Media", desc: "Base roja en la cara y malla negra en líneas finas. Ideal para niños.", tip: "Practica primero en papel; la malla se traza de afuera hacia adentro.", pasos: ["Cubre cara y cuello con esponja roja.", "Con pincel fino negro, traza líneas curvas desde el centro hacia afuera.", "Conecta las líneas con arcos para simular la red.", "Añade ojos negros o el símbolo del héroe en la frente."] },
-    { name: "Corazón / Estrella", dificultad: "Muy fácil", desc: "Diseños pequeños en la mejilla: rapidísimos para filas largas.", tip: "Con una esponja en forma de corazón puedes hacerlos en menos de 30 segundos.", pasos: ["Elige la mejilla y aplica una gota de pintura con esponja.", "Define el contorno con pincel fino.", "Añade brillos o puntos al gusto.", "¡Listo! Pasa al siguiente niño."] },
-    { name: "Tigre / Gatito", dificultad: "Media", desc: "Nariz negra, bigotes y rayas; base naranja o blanca.", tip: "Los bigotes salen perfectos con pincel de punta fina y mano firme.", pasos: ["Aplica base naranja (tigre) o blanca (gatito) en la zona de la cara.", "Pinta una nariz negra pequeña en la punta.", "Traza rayas oscuras desde la nariz hacia los lados.", "Dibuja bigotes largos con pincel fino."] },
-  ];
-
-  CHECKLIST_KEYS = ["ant1","ant2","ant3","ant4","ant5","dur1","dur2","dur3","dur4","dur5","des1","des2","des3","des4","des5"];
-  CHECKLIST_LABELS = [
-    "Ora por cada niño por su nombre.",
-    "Prepara la lección y la idea central.",
-    "Alista materiales, manualidad y dinámica.",
-    "Llega 15 minutos antes.",
-    "Revisa el salón: limpio y seguro.",
-    "Recibe a cada niño con alegría.",
-    "Sigue la estructura de la clase.",
-    "Incluye a todos, también a los más callados.",
-    "Mantén las reglas con firmeza y cariño.",
-    "Aplica la verdad a su vida.",
-    "Entrega cada niño a quien lo autoriza.",
-    "Comparte algo del día con los padres.",
-    "Ordena y guarda los materiales.",
-    "Anota seguimiento y peticiones.",
-    "Evalúa: ¿qué aprendieron de Cristo hoy?",
-  ];
-  CHECKLIST_CATS = ["Antes de la clase","Durante la clase","Después de la clase"];
-
   go(id) {
-    this.setState({ current: id, navOpen: false });
+    this.setState({ current: id });
     const el = document.querySelector("[data-content-scroll]");
     if (el) el.scrollTop = 0;
   }
   toggle(i) {
     this.setState(s => { const open = s.open.slice(); open[i] = !open[i]; return { open }; });
-  }
-  toggleNav() { this.setState(s => ({ navOpen: !s.navOpen })); }
-  closeNav() { this.setState({ navOpen: false }); }
-  setGfFig(i) { this.setState({ gfFig: i, gfStep: 0 }); }
-  gfNext() {
-    this.setState(s => {
-      const total = this.GFIG[s.gfFig].steps.length;
-      return { gfStep: Math.min(s.gfStep + 1, total - 1) };
-    });
-  }
-  gfPrev() { this.setState(s => ({ gfStep: Math.max(0, s.gfStep - 1) })); }
-  gfReset() { this.setState({ gfStep: 0 }); }
-  togglePc(i) { this.setState(s => ({ pcOpen: s.pcOpen === i ? -1 : i })); }
-  toggleCheck(key) {
-    this.setState(s => {
-      const checked = Object.assign({}, s.checked, { [key]: !s.checked[key] });
-      try { localStorage.setItem("iamhelp_checklist", JSON.stringify(checked)); } catch(e) {}
-      return { checked };
-    });
-  }
-  resetChecks() {
-    try { localStorage.removeItem("iamhelp_checklist"); } catch(e) {}
-    this.setState({ checked: {} });
   }
 
   bodyStyle(o) {
@@ -1163,53 +1010,16 @@ class Component extends DCLogic {
         title: s.title,
         onClick: () => this.go(s.id),
         rowStyle: active
-          ? { display: "flex", alignItems: "center", gap: "12px", padding: "11px 12px", borderRadius: "12px", marginBottom: "3px", background: "#C0DCFF", cursor: "pointer" }
+          ? { display: "flex", alignItems: "center", gap: "12px", padding: "11px 12px", borderRadius: "12px", marginBottom: "3px", background: "#EBDFC9", cursor: "pointer" }
           : { display: "flex", alignItems: "center", gap: "12px", padding: "11px 12px", borderRadius: "12px", marginBottom: "3px", cursor: "pointer" },
-        numStyle: { font: "700 12px/1 'Inter',sans-serif", color: active ? "#2255A4" : "#7BA0CC", width: "20px", flex: "0 0 auto" },
-        labelStyle: { font: active ? "600 14px/1.2 'Inter',sans-serif" : "500 14px/1.2 'Inter',sans-serif", color: active ? "#1A3A6B" : "#4A6080" },
+        numStyle: { font: "700 12px/1 'Inter',sans-serif", color: active ? "#8B6F47" : "#bdb29c", width: "20px", flex: "0 0 auto" },
+        labelStyle: { font: active ? "600 14px/1.2 'Inter',sans-serif" : "500 14px/1.2 'Inter',sans-serif", color: active ? "#5A4632" : "#6A6055" },
       };
     });
     const idx = this.SECTIONS.findIndex(s => s.id === cur);
     const curSection = this.SECTIONS[idx] || {};
-
-    // Globoflexia
-    const gfFig = this.GFIG[this.state.gfFig];
-    const gfTotalSteps = gfFig ? gfFig.steps.length : 0;
-    const gfStep = Math.min(this.state.gfStep, Math.max(0, gfTotalSteps - 1));
-    const gfTabs = this.GFIG.map((f, i) => ({
-      name: f.name,
-      onClick: () => this.setGfFig(i),
-      tabStyle: i === this.state.gfFig
-        ? { padding: "9px 18px", borderRadius: "999px", background: "#8B6F47", color: "#fff", font: "700 13px/1 'Inter',sans-serif", cursor: "pointer", border: "none", outline: "none", whiteSpace: "nowrap" }
-        : { padding: "9px 18px", borderRadius: "999px", background: "#EFE3CC", color: "#5A4632", font: "500 13px/1 'Inter',sans-serif", cursor: "pointer", border: "none", outline: "none", whiteSpace: "nowrap" },
-    }));
-
-    // Pintacaritas
-    const pcCards = this.PINTA.map((p, i) => ({
-      name: p.name,
-      dificultad: p.dificultad,
-      desc: p.desc,
-      tip: p.tip,
-      pasos: p.pasos,
-      open: i === this.state.pcOpen,
-      onClick: () => this.togglePc(i),
-    }));
-
-    // Checklist
-    const checkDone = this.CHECKLIST_KEYS.filter(k => this.state.checked[k]).length;
-    const checkTotal = this.CHECKLIST_KEYS.length;
-    const checkPercent = Math.round((checkDone / checkTotal) * 100);
-    const checkGroups = [
-      { cat: this.CHECKLIST_CATS[0], items: this.CHECKLIST_KEYS.slice(0,5).map((k,i) => ({ key: k, label: this.CHECKLIST_LABELS[i], done: !!this.state.checked[k], onClick: () => this.toggleCheck(k) })) },
-      { cat: this.CHECKLIST_CATS[1], items: this.CHECKLIST_KEYS.slice(5,10).map((k,i) => ({ key: k, label: this.CHECKLIST_LABELS[5+i], done: !!this.state.checked[k], onClick: () => this.toggleCheck(k) })) },
-      { cat: this.CHECKLIST_CATS[2], items: this.CHECKLIST_KEYS.slice(10,15).map((k,i) => ({ key: k, label: this.CHECKLIST_LABELS[10+i], done: !!this.state.checked[k], onClick: () => this.toggleCheck(k) })) },
-    ];
-
     return {
       navItems,
-      navOpen: this.state.navOpen,
-      toggleNav: () => this.toggleNav(),
-      closeNav: () => this.closeNav(),
       breadcrumb: curSection.title || "",
       progress: (idx + 1) + " / " + this.SECTIONS.length,
       prev: () => this.go(this.SECTIONS[Math.max(0, idx - 1)].id),
@@ -1227,35 +1037,333 @@ class Component extends DCLogic {
       c0Chev: this.chev(this.state.open[0]),
       c1Chev: this.chev(this.state.open[1]),
       c2Chev: this.chev(this.state.open[2]),
-      // Globoflexia
-      gfTabs,
-      gfFigName: gfFig ? gfFig.name : "",
-      gfCurStep: gfStep + 1,
-      gfTotalSteps,
-      gfStepText: gfFig ? gfFig.steps[gfStep] : "",
-      gfCanPrev: gfStep > 0,
-      gfCanNext: gfStep < gfTotalSteps - 1,
-      gfNext: () => this.gfNext(),
-      gfPrev: () => this.gfPrev(),
-      gfReset: () => this.gfReset(),
-      gfPrevStyle: gfStep > 0
-        ? { padding: "10px 22px", borderRadius: "999px", background: "#EFE3CC", color: "#5A4632", font: "600 14px/1 'Inter',sans-serif", cursor: "pointer", border: "none", outline: "none" }
-        : { padding: "10px 22px", borderRadius: "999px", background: "#F0EBE1", color: "#b3a890", font: "600 14px/1 'Inter',sans-serif", cursor: "default", border: "none", outline: "none", opacity: "0.5" },
-      gfNextStyle: gfStep < gfTotalSteps - 1
-        ? { padding: "10px 22px", borderRadius: "999px", background: "#8B6F47", color: "#fff", font: "700 14px/1 'Inter',sans-serif", cursor: "pointer", border: "none", outline: "none" }
-        : { padding: "10px 22px", borderRadius: "999px", background: "#c9b89c", color: "#fff", font: "700 14px/1 'Inter',sans-serif", cursor: "default", border: "none", outline: "none", opacity: "0.5" },
-      // Pintacaritas
-      pcCards,
-      // Checklist
-      checkGroups,
-      checkDone,
-      checkTotal,
-      checkPercent,
-      checkProgressStyle: { width: checkPercent + "%", height: "100%", background: "#8B6F47", borderRadius: "999px", transition: "width .4s ease" },
-      resetChecks: () => this.resetChecks(),
     };
   }
 }
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Manual Misionero";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  var __m = null;
+  try { __m = (() => {
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  if (paperPage) {
+    return { kind: 'paper-doc', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    if (authoredPx(el, 'width')) break;
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  return { kind: 'single-canvas', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: authoredPx(el, 'width'), height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + f.width + 'px ' + f.height +
+        'px;margin:0}html,body,[data-om-frame-wrap]{padding:0!important;' +
+        'margin:0!important;background:none!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
 </script>
 </body>
 </html>
